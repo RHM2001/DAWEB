@@ -1,0 +1,1 @@
+No esta la carpeta de node_modules en react porque ocupaba demasiado.
