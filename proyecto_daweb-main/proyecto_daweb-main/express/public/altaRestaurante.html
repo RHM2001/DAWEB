@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Alta restaurante</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/estiloIRP.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light">
+
+      <div class="container-fluid" id="nav">
+
+        <a class="navbar-brand" href="#" onclick="redireccionarInicio()">
+          <img src="images/cocinero.png" alt="Logo" style="width:30px;" class="sin-borde">
+          <span class="ms-2">FoodFusion</span>
+        </a>
+</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+          <ul class="navbar-nav">
+            <div id="barra">
+            <li class="nav-item">
+              <a onclick="redireccionarRestaurantes()" class="nav-link" href="#">Restaurantes</a>
+            </li>
+          </div>
+          <div id="barra1">
+            <li class="nav-item">
+              <a onclick="redireccionarCrearRestaurante()" class="nav-link active" href="#">Crear Restaurante</a>
+            </li>
+          </div>
+          <div id="logoDiv" class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/perfil.png" alt="perfil" style="width:30px;" class="sin-borde" />
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+              <a onclick="redireccionarPerfil()" class="dropdown-item" href="#">Mi perfil</a>
+              <a onclick="redireccionarPaginaInicio()" class="dropdown-item" href="#">Logout</a>
+            </div>
+          </div>
+
+          <style>
+            .dropdown-toggle::after {
+              content: none;
+            }
+            </style>
+          
+          
+          </ul>
+        </div>
+      
+    </nav>
+
+
+
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="col-md-6 mx-auto">
+        <div class="card border-dark mb-3" style="background-color: #95D5B2;">
+
+          <div class="card-header text-center" style="font-size: 36px;">Dar de alta un restaurante</div>
+          <div class="card-body">
+            <form>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" style="background-color: #D8F3DC;">Introduce el nombre</span>
+                <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" style="background-color: #D8F3DC;">Introduce la ciudad</span>
+                <input type="text" class="form-control" placeholder="Ciudad" id="ciudad">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" style="background-color: #D8F3DC;">Coordenadas</span>
+                <input type="text" class="form-control" placeholder="Coordenada X" id="coordenadasX">
+                <span class="input-group-text">,</span>
+                <input type="text" class="form-control" placeholder="Coordenada Y" id="coordenadasY">
+              </div>
+
+              <div class="text-center">
+                <button type="button" id="btnAltaRestaurante" class="btn btn-block w-25"
+                  style="background-color: white; " data-target="#demo-modal">Dar de alta</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="demo-modal" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="idTituloModal">¿Quieres crear este restaurante?</h5>
+          </div>
+          <div class="modal-body text-center" id="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button"  class="btn btn-block w-25" data-dismiss="modal" id="cancel">Cancelar</button>
+            <button type="button"  class="btn btn-block w-25" id="botonCrear">Crear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="javascripts/altaRestaurantes.js" type="text/javascript"></script>
+  <script src="javascripts/global.js" type="text/javascript"></script>
+</body>
+
+</html>

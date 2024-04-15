@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Plato restaurante</title>
+  <link rel="stylesheet" href="stylesheets/estiloIRP.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light">
+
+      <div class="container-fluid" id="nav">
+
+        <a class="navbar-brand" href="#" onclick="redireccionarInicio()">
+          <img src="images/cocinero.png" alt="Logo" style="width:30px;" class="sin-borde">
+          <span class="ms-2">FoodFusion</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+          <ul class="navbar-nav">
+            <div id="barra">
+            <li class="nav-item">
+              <a onclick="redireccionarRestaurantes()" class="nav-link active" href="#">Restaurantes</a>
+            </li>
+          </div>
+          <div id="barra1">
+            <li class="nav-item">
+              <a onclick="redireccionarCrearRestaurante()" class="nav-link" href="#">Crear Restaurante</a>
+            </li>
+          </div>
+          <div id="logoDiv" class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/perfil.png" alt="perfil" style="width:30px;" class="sin-borde" />
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+              <a onclick="redireccionarPerfil()" class="dropdown-item" href="#">Mi perfil</a>
+              <a onclick="redireccionarPaginaInicio()" class="dropdown-item" href="#">Logout</a>
+            </div>
+          </div>
+
+          <style>
+            .dropdown-toggle::after {
+              content: none;
+            }
+            </style>
+          
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+          <div class="card" style="background-color: #D8F3DC">
+            <div class="card-header text-center">
+              <h2 class="card-title font-weight-bold" id="platoNombre"></h2>
+            </div>
+            <div class="card-body col text-center mb-3" style="display: inline; max-height: 50px; ">
+              <div class="row">
+                <div class="col">
+                  <p class="card-text" id="descripcionPlato"></p>
+                </div>
+                <div class="col">
+                  <p class="card-text" id="PrecioPlato"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="card" style="background-color: #D8F3DC">
+            <div class="card-header">
+              <h3 class="text-center">Incidencias</h3>
+            </div>
+            <ul id="incidenciasList" class="list-group" style="max-height: 250px; overflow-y: auto;"></ul>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card" style="background-color: #D8F3DC">
+            <div class="card-header">
+              <h3 class="text-center">Crear incidencia</h3>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3">
+                  <label for="descripcionIncidencia" class="form-label">Descripción de la incidencia</label>
+                  <textarea class="form-control" id="descripcionIncidencia" rows="3"></textarea>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success" id="btnEnviarIncidencia">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="card" style="background-color: #D8F3DC; max-width: 400px; margin: 0 auto;">
+              <div class="card-body d-flex justify-content-center align-items-center">
+                <button class="btn btn-success m-2" id="btnBorrar" data-toggle="modal" data-target="#demo-modal">Borrar Plato</button>
+                <button class="btn btn-success m-2" id="btnEditar" data-toggle="modal" data-target="#modal-act">Editar Plato</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="demo-modal" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"  aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="idTituloModal">Borrar Plato</h5>
+              </div>
+              <div class="modal-body text-center" id="modal-body">
+                <p>¿Estás seguro de que deseas borrar este plato?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button"  class="btn btn-block w-25" data-dismiss="modal" id="cancel">Cancelar</button>
+                <button type="button"  class="btn btn-block w-25" id="botonCrear">Borrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="modal-act" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"  aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="idTituloModal">Actualizar Plato</h5>
+              </div>
+              <div class="modal-body text-center" id="modal-body">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" style="background-color: #D8F3DC;">Nombre</span>
+                  <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" style="background-color: #D8F3DC;">Descripcion</span>
+                  <input type="text" class="form-control" placeholder="Descripcion" id="descripcion">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" style="background-color: #D8F3DC;">Precio</span>
+                  <input type="text" class="form-control" placeholder="Precio" id="precio">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button"  class="btn btn-block w-25" data-dismiss="modal" id="cancelAct">Cancelar</button>
+                <button type="button"  class="btn btn-block w-25" id="btnAct">Actualizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+  </main>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script src="./javascripts/global.js" type="text/javascript"></script>
+<script src="./javascripts/allRestaurantes.js" type="text/javascript"></script>
+<script src="./javascripts/plato.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</html>

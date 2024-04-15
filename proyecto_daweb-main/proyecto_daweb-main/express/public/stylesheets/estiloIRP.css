@@ -1,0 +1,340 @@
+body::before {
+  content: "";
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/fondo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+
+}
+
+#boton-hamburguesa {
+  background-color: #B7E4C7;
+  color: white;
+  border: none;
+  font-size:15px;
+  margin-top: 10px;
+}
+
+#boton-hamburguesa:hover {
+  background-color:#2D6A4F;
+  cursor: pointer;
+}
+
+#botones-adicionales {
+  margin-top: 10px;
+}
+
+#botones-adicionales button {
+  margin-right: 5px;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+#restaurantes-container {
+  padding-top: 100px;
+  padding-bottom: 100px; /* Ajusta el valor según sea necesario */
+}
+
+#modal-add .modal-header {
+  border: none;
+}
+
+#modal-add .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#modal-rango .modal-header {
+  border: none;
+}
+
+#modal-rango .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#modal-ciudad .modal-header {
+  border: none;
+}
+
+#modal-ciudad .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#modal-dist .modal-header {
+  border: none;
+}
+
+#modal-dist .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#modal-opi .modal-header {
+  border: none;
+}
+
+#modal-opi .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#modal-act .modal-header {
+  border: none;
+}
+
+#modal-act .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#demo-modal .modal-header {
+  border: none;
+}
+
+#demo-modal .modal-footer {
+  border: none;
+  margin-top: 10px;
+}
+
+#idTituloModal {
+  font-weight: bold;
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+.modal-content {
+  background-color: #B7E4C7 !important;
+}
+
+#cancel {
+  background-color: white;
+}
+
+#cancelAct {
+  background-color: white;
+}
+
+#btnAct {
+  background-color: #40916c;
+  color: white;
+}
+
+#botonCrear {
+  background-color: #40916c;
+  color: white;
+}
+
+#cancelOpi {
+  background-color: white;
+}
+
+#btnOpi {
+  background-color: #40916c;
+  color: white;
+}
+
+#cancelAdd {
+  background-color: white;
+}
+
+#btnAdd {
+  background-color: #40916c;
+  color: white;
+}
+
+#cancelCiudad {
+  background-color: white;
+}
+
+#btnBCiudad {
+  background-color: #40916c;
+  color: white;
+}
+
+#cancelrango {
+  background-color: white;
+}
+
+#btnBRango {
+  background-color: #40916c;
+  color: white;
+}
+
+#cancelDist {
+  background-color: white;
+}
+
+#btnBDist {
+  background-color: #40916c;
+  color: white;
+}
+
+#foot {
+  margin-top: 100px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.sin-borde {
+  border: none;
+}
+
+.navbar {
+  background-color: #40916c;
+  color: #40916c;
+}
+
+.navbar-brand {
+  font-weight: bold;
+
+}
+
+.navbar-nav {
+  font-weight: bold;
+  background-color: #40916c;
+
+}
+
+.img-fluid {
+  display: block;
+  margin: 20px auto;
+}
+
+main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+footer {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #40916C;
+  color: dark;
+}
+
+#demo {
+  width: 100%;
+  height: 1000px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+#collapsibleNavbar {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+#barra {
+
+  margin-top: 10px;
+  white-space: nowrap;
+}
+
+#barra1 {
+  margin-top: 10px;
+  white-space: nowrap;
+}
+
+#nav {
+  margin-right: 30px;
+  margin-left: 30px;
+  white-space: nowrap;
+}
+
+#miDiv {
+  margin-top: 30px;
+}
+
+#welcome-section {
+  color: #2D6A4F;
+  font-size: 42px;
+  padding-top: 60px;
+}
+
+#form1 {
+  align-items: center;
+  padding-left: 570px;
+}
+
+#buscar {
+  background-color:#B7E4C7;
+  color: white;
+  border: 1px solid #40916C;
+}
+
+#buscar:hover {
+  background-color:#2D6A4F;
+  cursor: pointer;
+}
+
+
+#logoDiv {
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+#divGit {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#platos {
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  margin-bottom: 10px;
+
+}
+
+div+div {
+  margin-top: 20px;
+  /* margen superior */
+}
+
+/*@font-face {
+  font-family: 'Lato';
+  src: url('../../Fuente_Lato/Lato-Regular.ttf') format('truetype');
+}*/
+
+.welcome-section {
+  color: #2D6A4F;
+  font-size: 42px;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.card {
+  background-color: #B7E4C7;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
